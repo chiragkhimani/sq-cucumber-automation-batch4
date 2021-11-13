@@ -12,6 +12,12 @@ public class ProductDetailPage extends BasePage {
 
 	@FindBy(className = "inventory_details_price")
 	WebElement itemPrice;
+	
+	@FindBy(xpath="//button[@id='add-to-cart-sauce-labs-backpack']")
+	WebElement addToCartBtn;
+	
+	@FindBy(xpath="//a[@class='shopping_cart_link']")
+	WebElement cartIcon;
 
 	public ProductDetailPage(WebDriver driver) {
 		// Calling constructor of super class with passing arguments driver which we
@@ -25,5 +31,13 @@ public class ProductDetailPage extends BasePage {
 
 	public void verifyPrice() {
 		System.out.println(itemPrice.getText());
+	}
+
+	public void clickOnAddToCartBtn() {
+		addToCartBtn.click();
+	}
+	
+	public void clickOnCartIcon() {
+		cartIcon.click();
 	}
 }

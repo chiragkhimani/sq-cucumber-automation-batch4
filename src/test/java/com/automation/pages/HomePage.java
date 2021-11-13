@@ -14,6 +14,9 @@ public class HomePage extends BasePage {
 
 	@FindBy(xpath = "//div[@class='inventory_item_name']")
 	List<WebElement> listOfItems;
+	
+	@FindBy(xpath="//div[text()='Sauce Labs Backpack']")
+	WebElement sauceLabsBackPackLink;
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -38,4 +41,8 @@ public class HomePage extends BasePage {
 			listOfItems = driver.findElements(By.xpath("//div[@class='inventory_item_name']"));
 		}
 	}
+
+	public void selectSauceLabsBackpack() {
+		sauceLabsBackPackLink.click();
+	}	
 }
