@@ -7,7 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
 public class HomeSteps {
-	HomePage homePage = new HomePage(DriverUtils.getDriver());
+	HomePage homePage = new HomePage();
 	
 	@Given("verify login successful")
 	public void verify_login_successful() {
@@ -22,5 +22,15 @@ public class HomeSteps {
 	@When("user selects Sauce Labs Backpack")
 	public void user_selects_sauce_labs_backpack() {
 		homePage.selectSauceLabsBackpack();
+	}
+	
+	@When("user click on menu icon")
+	public void user_click_on_menu_icon() {
+		homePage.clickOnMenuIcon();
+	}
+
+	@When("clicks on logout button")
+	public void clicks_on_logout_button() {
+		homePage.clickOnLogoutBtn();
 	}
 }

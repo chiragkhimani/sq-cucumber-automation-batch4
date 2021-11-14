@@ -2,6 +2,7 @@ package com.automation.pages;
 
 import java.util.List;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,20 +15,22 @@ public class HomePage extends BasePage {
 
 	@FindBy(xpath = "//div[@class='inventory_item_name']")
 	List<WebElement> listOfItems;
-	
-	@FindBy(xpath="//div[text()='Sauce Labs Backpack']")
+
+	@FindBy(xpath = "//div[text()='Sauce Labs Backpack']")
 	WebElement sauceLabsBackPackLink;
 
-	public HomePage(WebDriver driver) {
-		super(driver);
-	}
+	@FindBy(id = "react-burger-menu-btn")
+	WebElement menuIcon;
+
+	@FindBy(id = "logout_sidebar_link")
+	WebElement logoutBtn;
 
 	public void verifyHomePage() {
-		System.out.println(homePageItemName.isDisplayed());
+		Assert.assertTrue("Item name is not present on home page", homePageItemName.isDisplayed());
 	}
 
 	public void verifyProductDetailPageNavigation() {
-		ProductDetailPage pdpPage = new ProductDetailPage(driver);
+		ProductDetailPage pdpPage = new ProductDetailPage();
 
 		for (int i = 0; i < listOfItems.size(); i++) {
 
@@ -44,5 +47,13 @@ public class HomePage extends BasePage {
 
 	public void selectSauceLabsBackpack() {
 		sauceLabsBackPackLink.click();
-	}	
+	}
+
+	public void clickOnMenuIcon() {
+		menuIcon.click();
+	}
+
+	public void clickOnLogoutBtn() {
+		logoutBtn.click();
+	}
 }

@@ -8,7 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LoginSteps {
-	LoginPage loginPage = new LoginPage(DriverUtils.getDriver());
+	LoginPage loginPage = new LoginPage();
 
 	@Given("user is on website")
 	public void user_is_on_website() {
@@ -29,5 +29,9 @@ public class LoginSteps {
 	public void verify_invalid_login_error_message_is_displayed() {
 		loginPage.verifyInvalidLoginError();
 	}
-
+	
+	@Then("verify user is navigate to login page")
+	public void verify_user_is_navigate_to_login_page() {
+		loginPage.verifyLoginPage();
+	}
 }

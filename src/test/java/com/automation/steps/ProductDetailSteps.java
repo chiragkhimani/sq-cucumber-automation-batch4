@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 
 public class ProductDetailSteps {
 	
-	ProductDetailPage pdpPage = new ProductDetailPage(DriverUtils.getDriver());
+	ProductDetailPage pdpPage = new ProductDetailPage();
 	
 	@Then("verify user is on product detail page")
 	public void verify_user_is_on_product_detail_page() {

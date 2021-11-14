@@ -1,5 +1,6 @@
 package com.automation.pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,12 +21,6 @@ public class LoginPage extends BasePage {
 	@FindBy(xpath = "//div[@class='error-message-container error']/h3")
 	WebElement invalidLoginError;
 
-	public LoginPage(WebDriver driver) {
-		// Calling constructor of super class with passing arguments driver which we
-		// received from test class
-		super(driver);
-	}
-
 	public void doLogin(String username, String password) {
 		waitForElementToBeClickable(userNameInput, driver);
 		userNameInput.sendKeys(username);
@@ -34,12 +29,18 @@ public class LoginPage extends BasePage {
 	}
 
 	public void verifyInvalidLoginError() {
-		System.out.println(invalidLoginError.isDisplayed());
+		Assert.assertTrue("Invalid login error message is not displayed on login page",
+				invalidLoginError.isDisplayed());
 	}
 
 	public void openWebsite() {
 		// Loading url in the browser
 		driver.get(PropertyReader.getProperty("application.url"));
+	}
+
+	public void verifyLoginPage() {
+		Assert.assertTrue("Username is not displayed on login page", userNameInput.isDisplayed());
+		Assert.assertTrue("Password is not displayed on login page", passwordInput.isDisplayed());
 	}
 
 }
