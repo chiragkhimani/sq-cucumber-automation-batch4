@@ -8,9 +8,9 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 			features = "src//test//resources//feature",
-			glue="com.automation.steps",
-			tags = "@smoke"
-		)
+			glue = "com.automation.steps", 
+			tags = "@smoke", 
+			plugin = {"json:target/cucumber.json", "html:report/cucumber.html" })
 public class TestRunner {
-	
+
 }

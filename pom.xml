@@ -44,5 +44,34 @@
 		</dependency>
 
 	</dependencies>
+	
+	
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>net.masterthought</groupId>
+				<artifactId>maven-cucumber-reporting</artifactId>
+				<version>3.4.0</version>
+				<executions>
+					<execution>
+						<id>execution</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<projectName>Cucumber Execution Report</projectName>
+							<outputDirectory>CucumberReport</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+
+
+		</plugins>
+	</build>
 
 </project>
