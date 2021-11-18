@@ -15,23 +15,19 @@ public class LoginSteps {
 		loginPage.openWebsite();
 	}
 
-	@When("user login with valid cred")
-	public void user_login_with_valid_cred() {
-		loginPage.doLogin("standard_user", "secret_sauce");
-	}
-
-	@When("user login with invalid cred")
-	public void user_login_with_invalid_cred() {
-		loginPage.doLogin("standard_user", "secret_sauce123");
-	}
-
 	@Then("verify invalid login error message is displayed")
 	public void verify_invalid_login_error_message_is_displayed() {
 		loginPage.verifyInvalidLoginError();
 	}
-	
+
 	@Then("verify user is navigate to login page")
 	public void verify_user_is_navigate_to_login_page() {
 		loginPage.verifyLoginPage();
 	}
+
+	@When("user login with username {string} and password {string}")
+	public void user_login_with_username_and_password(String username, String password) {
+		loginPage.doLogin(username, password);
+	}
+
 }

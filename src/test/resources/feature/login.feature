@@ -1,34 +1,31 @@
 #Author: Chirag
 Feature: Login Features Tests
   As user, I should be able to login into the website
-  
-  Background:
-			Given user is on website
-	
-	@chirag @smoke @login
-  Scenario: verify user can able to login with valid
-    When user login with valid cred
+
+  Background: 
+    Given user is on website
+
+  @chirag @smoke @login
+  Scenario Outline: verify user can able to login with valid
+    When user login with username "<username>" and password "<password>"
     Then verify login successful
 
-	@shyam @regression
-  Scenario: verify user cannot login with invalid cred
-    When user login with invalid cred
+    Examples: 
+      | username                | password     |
+      | performance_glitch_user | secret_sauce |
+      | standard_user           | secret_sauce |
+
+  @chirag @smoke @login
+  Scenario Outline: verify user cannot able to login with invalid cred
+    When user login with username "<username>" and password "<password>"
     Then verify invalid login error message is displayed
 
-	@chirag @smoke @logout
-  Scenario: verify user can able to logout
-    When user login with valid cred
-    Then verify login successful
-    When user click on menu icon
-    And clicks on logout button
-    Then verify user is navigate to login page
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    Examples: 
+      | username        | password     |
+      | adminini123     | secret_sauce |
+      | standard_user   | secretsauce  |
+      | admin123        | secretsauce  |
+      |                 | secret_sauce |
+      |                 |              |
+      | Standard_user   | secret_sauce |
+      | locked_out_user | secret_sauce |

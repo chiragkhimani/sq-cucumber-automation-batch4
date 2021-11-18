@@ -9,7 +9,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 			features = "src//test//resources//feature",
 			glue = "com.automation.steps", 
-			tags = "@smoke", 
+			tags = "@regression", 
+			dryRun = true,
 			plugin = {"json:target/cucumber.json", "html:report/cucumber.html" })
 public class TestRunner {
 
