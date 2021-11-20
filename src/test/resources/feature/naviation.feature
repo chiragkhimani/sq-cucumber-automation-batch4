@@ -1,8 +1,8 @@
 Feature: This feature will validate navigation between the page
 
   Background: 
-    Given user is on website
-    When user login with valid cred
+    Given user is on sauce website
+   	When user login with username "standard_user" and password "secret_sauce"
     Then verify login successful
 
   @smoke @hatice

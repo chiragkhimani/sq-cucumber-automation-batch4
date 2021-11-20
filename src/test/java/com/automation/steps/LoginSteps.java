@@ -10,9 +10,9 @@ import io.cucumber.java.en.When;
 public class LoginSteps {
 	LoginPage loginPage = new LoginPage();
 
-	@Given("user is on website")
+	@Given("user is on sauce website")
 	public void user_is_on_website() {
-		loginPage.openWebsite();
+		loginPage.openSauceWebsite();
 	}
 
 	@Then("verify invalid login error message is displayed")

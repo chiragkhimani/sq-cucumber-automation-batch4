@@ -33,9 +33,9 @@ public class LoginPage extends BasePage {
 				invalidLoginError.isDisplayed());
 	}
 
-	public void openWebsite() {
+	public void openSauceWebsite() {
 		// Loading url in the browser
-		driver.get(PropertyReader.getProperty("application.url"));
+		driver.get(PropertyReader.getProperty("application.sauce.url"));
 	}
 
 	public void verifyLoginPage() {

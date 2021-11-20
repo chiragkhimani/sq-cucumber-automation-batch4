@@ -3,7 +3,7 @@ Feature: Login Features Tests
   As user, I should be able to login into the website
 
   Background: 
-    Given user is on website
+    Given user is on sauce website
 
   @chirag @smoke @login
   Scenario Outline: verify user can able to login with valid
