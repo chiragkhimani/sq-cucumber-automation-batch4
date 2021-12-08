@@ -6,20 +6,26 @@ import com.automation.utils.PropertyReader;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.restassured.RestAssured;
 
 public class Hooks {
 
-	@Before
+	@Before("@ui")
 	public void setUp() {
 		DriverUtils.initDriver();
 
 		PropertyReader.initProperties();
 
 		ExcelUtils.initExcelData();
-
 	}
 
-	@After
+	@Before("@api")
+	public void setUpAPI() {
+		PropertyReader.initProperties();
+		RestAssured.baseURI = PropertyReader.getProperty("api.base.url");
+	}
+
+	@After("@ui")
 	public void cleanUp() {
 		DriverUtils.getDriver().close();
 	}

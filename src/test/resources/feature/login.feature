@@ -1,4 +1,5 @@
 #Author: Chirag
+@ui
 Feature: Login Features Tests
   As user, I should be able to login into the website
 

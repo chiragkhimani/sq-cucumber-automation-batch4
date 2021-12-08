@@ -1,0 +1,11 @@
+{
+    "firstname" : "Akmaral",
+    "lastname" : "SprintQA",
+    "totalprice" : 1200,
+    "depositpaid" : true,
+    "bookingdates" : {
+        "checkin" : "2018-01-01",
+        "checkout" : "2019-01-01"
+    },
+    "additionalneeds" : "Room on higher floor"
+}

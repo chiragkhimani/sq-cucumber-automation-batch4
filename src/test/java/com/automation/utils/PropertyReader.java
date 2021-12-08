@@ -1,7 +1,11 @@
 package com.automation.utils;
 
 import java.io.FileInputStream;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Properties;
+
+import io.cucumber.java.it.Data;
 
 public class PropertyReader {
 
@@ -19,6 +23,17 @@ public class PropertyReader {
 
 	public static String getProperty(String key) {
 		return prop.getProperty(key);
+	}
+	
+	public static void main(String[] args) throws SQLException {
+		DatabaseUtils.initDatabase();
+		ResultSet result = DatabaseUtils.getData("SELECT * FROM projects;");
+		
+		while(result.next()) {
+			System.out.print(result.getString("name") + " ");
+			System.out.println(result.getString("budget") + " ");
+		}
+		
 	}
 
 }
