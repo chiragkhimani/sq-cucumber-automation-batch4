@@ -25,15 +25,5 @@ public class PropertyReader {
 		return prop.getProperty(key);
 	}
 	
-	public static void main(String[] args) throws SQLException {
-		DatabaseUtils.initDatabase();
-		ResultSet result = DatabaseUtils.getData("SELECT * FROM projects;");
-		
-		while(result.next()) {
-			System.out.print(result.getString("name") + " ");
-			System.out.println(result.getString("budget") + " ");
-		}
-		
-	}
 
 }

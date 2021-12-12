@@ -5,9 +5,6 @@ Feature: This feature will validate navigation between the page
    	When user login with username "standard_user" and password "secret_sauce"
     Then verify login successful
 
-  @smoke @hatice
-  Scenario: verify navigation between homepage and pdp page
-    And verify user can navigates to pdp page for each product
 
   @regression @sumeyra
   Scenario: verify user can add product into cart

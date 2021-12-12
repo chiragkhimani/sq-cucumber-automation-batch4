@@ -22,7 +22,6 @@ public class LoginPage extends BasePage {
 	WebElement invalidLoginError;
 
 	public void doLogin(String username, String password) {
-		waitForElementToBeClickable(userNameInput, driver);
 		userNameInput.sendKeys(username);
 		passwordInput.sendKeys(password);
 		loginBtn.click();
