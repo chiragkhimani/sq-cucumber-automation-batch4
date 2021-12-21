@@ -12,6 +12,8 @@ public class RestAPIRequestSteps {
 	public void user_wants_to_call_get_api_to_retrive_list_of_users() {
 		RestAssuredUtils.setEndPoint(PropertyReader.getProperty("retrieve.all.booking.endpoint"));
 	}
+	
+	
 
 	@When("user call get request")
 	public void user_call_get() {

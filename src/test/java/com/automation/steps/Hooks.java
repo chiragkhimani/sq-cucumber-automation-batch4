@@ -22,7 +22,7 @@ public class Hooks {
 	@Before("@api")
 	public void setUpAPI() {
 		PropertyReader.initProperties();
-		RestAssured.baseURI = PropertyReader.getProperty("api.base.url");
+		RestAssured.baseURI = PropertyReader.getProperty("reqres.api.base.url");
 	}
 
 	@After("@ui")
