@@ -28,6 +28,14 @@ public class RestAssuredUtils {
 	public static void get() {
 		res = reqSpec.get(endPoint);
 	}
+	
+	public static void delete() {
+		res = reqSpec.delete(endPoint);
+	}
+
+	public static void put() {
+		res = reqSpec.put(endPoint);
+	}
 
 	public static int getResponseCode() {
 		return res.getStatusCode();
