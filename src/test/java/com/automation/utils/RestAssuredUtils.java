@@ -28,7 +28,7 @@ public class RestAssuredUtils {
 	public static void get() {
 		res = reqSpec.get(endPoint);
 	}
-
+	
 	public static int getResponseCode() {
 		return res.getStatusCode();
 	}
